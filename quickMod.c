@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stdbool.h>
 #include <stdio.h>
 
 const uint32_t D = 3;
@@ -10,10 +11,17 @@ uint32_t quickmod(uint32_t n)
     return n - quotient * D;
 }
 
+bool divisible(uint32_t n)
+{
+    return n * M <= M-1;
+}
+
 int main()
 {
     printf("%d\n", quickmod(5));
     printf("%d\n", quickmod(55));
     printf("%d\n", quickmod(555));
+    printf("%d\n", divisible(7));
+    printf("%d\n", divisible(87));
     return 0;
 }
